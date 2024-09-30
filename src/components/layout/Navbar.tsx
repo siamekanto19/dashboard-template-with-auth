@@ -1,5 +1,7 @@
+'use client'
+import { Menu } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 
 const Navbar = () => {
@@ -14,9 +16,17 @@ const Navbar = () => {
           <li>Services</li>
         </ul>
 
-        <Button className='rounded-[12px] bg-brand h-[52px] px-8 font-medium hover:bg-indigo-500'>
-          Contact Us
-        </Button>
+        <div className='flex items-center gap-5'>
+          <Link href='/signup'>
+            <Button className='rounded-[12px] bg-brand h-[52px] px-8 font-medium hover:bg-indigo-500'>Sign up</Button>
+          </Link>
+        </div>
+      </div>
+      <div className='x-container lg:hidden flex justify-between items-center pt-8'>
+        <Image src='/images/logo.svg' width={50} height={50} alt='Logo' />
+        <button className='size-10 rounded-full bg-[#3B52CF] flex justify-center items-center text-white hover:bg-indigo-600'>
+          <Menu />
+        </button>
       </div>
     </nav>
   )
