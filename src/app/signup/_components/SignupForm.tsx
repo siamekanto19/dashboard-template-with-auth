@@ -10,8 +10,8 @@ import { signIn } from 'next-auth/react'
 import { toast } from 'sonner'
 
 const signupSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
+  email: z.string().email({ message: 'Email must be valid' }),
+  password: z.string().min(8, { message: 'Password must be at least 8 characters long' }),
 })
 
 const SignupForm = () => {

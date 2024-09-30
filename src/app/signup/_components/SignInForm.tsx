@@ -11,8 +11,8 @@ import { toast } from 'sonner'
 
 const signInSchema = z.object({
   name: z.string(),
-  email: z.string().email(),
-  password: z.string().min(8),
+  email: z.string().email({ message: 'Email must be valid' }),
+  password: z.string().min(8, { message: 'Password must be at least 8 characters long' }),
 })
 
 const SignInForm = () => {
